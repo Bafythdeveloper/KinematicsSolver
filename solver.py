@@ -155,6 +155,100 @@ if choice == "1":
                 f"In physics, time cannot be negative in this context, so the given values do not represent a realistic motion.")
                 print("Does this make sense? If you need extra help in Physics, please feel free to have a chat with Bhavith or Mr. Smith. We would be glad to help you! :)")
     if user_input == "3rd" or user_input == "3":
-        print("Under Construction")
+        print("The Thrid Kinematic Equation (Timeless Equation) is vF^2 = v0^2 + 2a(xF-x0)")
+        print("You can use this equation to solve for final velocity (vF), initial velocity (v0), displacement (xF), initial position(x0), or acceleration (a).")
+        third_kinematic_input = input("Which value are you solving for? (vF, v0, a, xF, x0, dx): ")
+
+    if third_kinematic_input == "vF" or third_kinematic_input == "vf":
+        print("Please provide the numerical values for these variables: ")
+        third_v0 = float(input("v0 (initial velocity) = "))
+        third_a = float(input("a (acceleration) = "))
+        third_xF = float(input("xF (final position) = "))
+        third_x0 = float(input("x0 (initial position) = "))
+        third_vF = math.sqrt(third_v0**2 + 2 * third_a * (third_xF - third_x0))
+
+        print(f"Answer: vF = {third_vF} m/s\n"
+        f"Explanation: We use the third kinematic equation vF^2 = v0^2 + 2a(xF - x0). "
+        f"First, calculate the displacement: xF - x0 = {third_xF} - {third_x0} = {third_xF - third_x0}. "
+        f"Then multiply by 2a: 2 * {third_a} * {third_xF - third_x0} = {2 * third_a * (third_xF - third_x0)}. "
+        f"Next, add v0^2: {third_v0}^2 = {third_v0**2}. "
+        f"So vF^2 = {third_v0**2} + {2 * third_a * (third_xF - third_x0)} = {third_v0**2 + 2 * third_a * (third_xF - third_x0)}. "
+        f"Finally, take the square root to solve for vF: vF = {third_vF} m/s.")
+
+    elif third_kinematic_input == "v0" or third_kinematic_input == "vi":
+        print("Please provide the numerical values for these variables: ")
+        third_vF = float(input("vF (final velocity) = "))
+        third_a = float(input("a (acceleration) = "))
+        third_xF = float(input("xF (final position) = "))
+        third_x0 = float(input("x0 (initial position) = "))
+        third_v0 = math.sqrt(third_vF**2 - 2 * third_a * (third_xF - third_x0))
+
+        print(f"Answer: v0 = {third_v0} m/s\n"
+        f"Explanation: Starting from vF^2 = v0^2 + 2a(xF - x0), subtract 2a(xF - x0) from both sides: "
+        f"v0^2 = vF^2 - 2a(xF - x0). "
+        f"Substitute values: vF = {third_vF}, a = {third_a}, xF = {third_xF}, x0 = {third_x0}. "
+        f"Compute: v0^2 = {third_vF**2} - {2 * third_a * (third_xF - third_x0)} = {third_vF**2 - 2 * third_a * (third_xF - third_x0)}. "
+        f"Finally, take the square root: v0 = {third_v0} m/s.")
+
+    elif third_kinematic_input == "a":
+        print("Please provide the numerical values for these variables: ")
+        third_vF = float(input("vF (final velocity) = "))
+        third_v0 = float(input("v0 (initial velocity) = "))
+        third_xF = float(input("xF (final position) = "))
+        third_x0 = float(input("x0 (initial position) = "))
+        third_a = (third_vF**2 - third_v0**2) / (2 * (third_xF - third_x0))
+
+        print(f"Answer: a = {third_a} m/s²\n"
+        f"Explanation: Starting from vF^2 = v0^2 + 2a(xF - x0), subtract v0^2 from both sides: "
+        f"vF^2 - v0^2 = 2a(xF - x0). "
+        f"Then divide both sides by 2(xF - x0): a = (vF^2 - v0^2) / (2(xF - x0)). "
+        f"Substitute values: vF = {third_vF}, v0 = {third_v0}, xF = {third_xF}, x0 = {third_x0}. "
+        f"Compute: a = ({third_vF**2} - {third_v0**2}) / (2 * {third_xF - third_x0}) = {third_a} m/s².")
+
+    elif third_kinematic_input == "dx":
+        print("Please provide the numerical values for these variables: ")
+        third_vF = float(input("vF (final velocity) = "))
+        third_v0 = float(input("v0 (initial velocity) = "))
+        third_a = float(input("a (acceleration) = "))
+        third_dx = (third_vF**2 - third_v0**2) / (2 * third_a)
+
+        print(f"Answer: displacement (xF - x0) = {third_dx} m\n"
+        f"Explanation: Starting from vF^2 = v0^2 + 2a(xF - x0), subtract v0^2 from both sides: "
+        f"vF^2 - v0^2 = 2a(xF - x0). "
+        f"Then divide both sides by 2a: (xF - x0) = (vF^2 - v0^2) / (2a). "
+        f"Substitute values: vF = {third_vF}, v0 = {third_v0}, a = {third_a}. "
+        f"Compute: ({third_vF**2} - {third_v0**2}) / (2 * {third_a}) = {third_dx} m.")
+
+    elif third_kinematic_input == "xF" or third_kinematic_input == "xf":
+        print("Please provide the numerical values for these variables: ")
+        third_vF = float(input("vF (final velocity) = "))
+        third_v0 = float(input("v0 (initial velocity) = "))
+        third_a = float(input("a (acceleration) = "))
+        third_x0 = float(input("x0 (initial position) = "))
+        third_xF = ((third_vF**2 - third_v0**2) / (2 * third_a)) + third_x0
+
+        print(f"Answer: xF = {third_xF} m\n"
+        f"Explanation: Starting from vF^2 = v0^2 + 2a(xF - x0), subtract v0^2: "
+        f"vF^2 - v0^2 = 2a(xF - x0). "
+        f"Divide by 2a: (xF - x0) = (vF^2 - v0^2) / (2a). "
+        f"Then add x0 to both sides: xF = (vF^2 - v0^2)/(2a) + x0. "
+        f"Substitute values: xF = ({third_vF**2} - {third_v0**2})/(2 * {third_a}) + {third_x0} = {third_xF} m.")
+
+    elif third_kinematic_input == "x0" or third_kinematic_input == "xi":
+        print("Please provide the numerical values for these variables: ")
+        third_vF = float(input("vF (final velocity) = "))
+        third_v0 = float(input("v0 (initial velocity) = "))
+        third_a = float(input("a (acceleration) = "))
+        third_xF = float(input("xF (final position) = "))
+        third_x0 = third_xF - ((third_vF**2 - third_v0**2) / (2 * third_a))
+
+        print(f"Answer: x0 = {third_x0} m\n"
+        f"Explanation: Starting from vF^2 = v0^2 + 2a(xF - x0), subtract v0^2: "
+        f"vF^2 - v0^2 = 2a(xF - x0). "
+        f"Divide by 2a: (xF - x0) = (vF^2 - v0^2)/(2a). "
+        f"Then subtract this from xF to isolate x0: "
+        "x0 = xF - (vF^2 - v0^2)/(2a). "
+        f"Substitute values: x0 = {third_xF} - ({third_vF**2} - {third_v0**2})/(2 * {third_a}) = {third_x0} m.")
+        
 if choice == "2":
     print("Under Construction")        
