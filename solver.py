@@ -251,4 +251,6 @@ if choice == "1":
         f"Substitute values: x0 = {third_xF} - ({third_vF**2} - {third_v0**2})/(2 * {third_a}) = {third_x0} m.")
         
 if choice == "2":
-    print("Under Construction")        
+     choices = input("Which values do you have in your problem (vF, v0, a, t, xF, x0)")
+    if choices == "vF, v0, a, t" or choices == "v0, a, t" or choices == "vF, a, t" or choices == "vF, v0, a" or choices == "vF, v0, t":
+        print("You should use the First Kinematic Equation: vF = v0 + at")      
